@@ -27,7 +27,7 @@ tbd
 
 ## Appendix
 
-<embed src="https://github.com/yiwenyin/assets/blob/main/DS105%20code%20appendix.pdf" width="500" height="375" type="application/pdf">
+[Code appendix](https://github.com/yiwenyin/assets/blob/main/DS105%20code%20appendix.pdf) 
 
 ## Image repository
 
