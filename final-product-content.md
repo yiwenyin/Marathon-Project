@@ -2,7 +2,15 @@
 ### Samantha Post, Sebastian Bucarion, Yiwen Yin
 
 ## Executive Summary
-tbd
+The aim of our project was to conduct an exploratory analysis of marathon race times, both in historical Olympic data and recent history given by the World Marathon Majors. Using data on elite runners in a range of cities and across decades of race history, our goal was to extract race time trends and predict where the future of race times might be headed. Looking into city-level data may additionally offer covariates of explanation for what types of factors may be driving race times to progress in the way that have been. 
+
+Our data focuses on two of the world's most highly recognized marathon races: the Olympics and World Marathon Majors. For the purposes of our data, we took all available Olympic data, spanning back to 1908, and two decades of World Marathon Majors, taking place in London, New York, Berlin, Chicago, and Boston. Each city provided us with different covariates of interest, which will be explored later in this report.
+
+In the process of analyzing our data, we relied on three main sources – Excel, R, and Python. These methods were used to analyze and visualize our data, creating descriptive statistics, data visualization methods, and models. Our analysis and methodology sought to extract trends and relationships within our data to best explain the progression of marathon times. A detailed description is provided within this report.
+
+Our results showed conclusive time series trends for Olympic data, which provided the clearest vision of the progression of marathon times throughout the past and into the future, with the ability to even predict the first official sub-2 hour marathon. Due to the nature of our city-level data, we were unable to create models to extract any trends. We additionally analyzed our covariates of interest for each city and while they were unable to provide any causal relationships, we were able to see some of the unique characteristics of each race, including factors about runners or race conditions that may affect how race times vary. Our Results section provides a full and detailed explanation of our processes, resulting models, and covariate analysis. 
+
+Completing our analysis, the Olympic time series trend showed to be the most informative about the history of race times as well as the future of race times. Using our World Marathon Major data, we were able to contextualize this time series model and strengthen our forecast values. While we see from our time series model that recent history shows a flatlining trend of race progression, additional research is needed to conclude stronger relationships between the covariates we studied and how they may affect race times. 
 
 ## Motivation
 Our project sought to analyze the progression of marathon race times of elite racers through recent history by observing the development of the world’s most elite marathons – the World Marathon Majors and the Olympic marathon race. We wanted to find out how marathon times have changed through history and what factors may be contributing to these changes. This was a topic of interest for further study because as the world becomes more technologically advanced and complex, running is one of the few things that remains one of the most fundamental and basic activities in our world. This is not to say humans have not found ways to improve upon the sport – through its long history since the first ever organized marathon at the 1896 Athens Olympics to present day worldwide road races, runners have continued to set and break records, pushing the limits of our physical abilities, and continue to strive for groundbreaking race times, with an official sub 2-hour marathon record waiting to be reached. How exactly have marathon times progressed throughout history and what patterns can we deduce to help us understand where marathon times are headed? This is the question that drove us to research this topic. 
@@ -113,8 +121,21 @@ The boxplot chart below provides a friendlier visualization of how our city race
 
 As mentioned in earlier sections, on a city-specific level, we attempted to find explanatory covariates to further our understanding of why the data is how it is.
 
+From the 20 year span of data we synthesized for the Berlin World Marathon Majors, we found that the three ethnicities appearing most within the top 100 finishers each year were German, followed closely by Kenyan, and British. Each year the same countries continue to be on the top of the leaderboards, showing minimal signs of any performance changes as they relate to ethnicity. While this does not tell us much about the patterns identified in the above graphs, most primarily due to a limitation in data prohibiting us to conduct this ethnic analysis across all cities, it is interesting to note that the largest cohort of runners each year in Berlin were German, so not traveling far for the race. This was something we hypothesized before conducting our research and synthesizing the data. 
 
+![berlin](https://github.com/yiwenyin/assets/blob/main/ds24.png)
 
+We had hoped to see a clear relationship between weather and marathon finishing times, feeling most strongly about this hypothesis among the other covariates at the start of our research, however, upon analyzing the race-day temperature each year at the Boston Marathon, we found no correlation. The scatter plot below for which we regressed temperature on race times indicates this very clearly, with no relationship among the plotted data points evident. 
+
+![Boston](https://github.com/yiwenyin/assets/blob/main/ds19.png)
+
+Age group ended up being a covariate that was very relationship-oriented, the data producing concrete conclusions as expected. As you can see below, runners aged 25-29 have been consistently the fastest for the past 20 years of the Chicago Marathon, followed by runners 20-24 and then 30-34. Given what we know about the human body and its physical abilities this is no surprise. There were very limited data points for both the youngest and oldest cohorts of runners, 16-19 and 50-54, with runners aged 45-49 and 50-54 the slowest cohort of runners, confirming that there is in fact a sweet spot for age when it comes to running marathons. 
+
+![chicago](https://github.com/yiwenyin/assets/blob/main/ds16.png)
+
+The male and female bodies are built differently and thus it is no surprise that we saw a significant relationship between finishing times and gender when evaluating male and female race times over 20 years of the London Marathon. The men have unquestionably ran faster than the women every year, and by about 900 seconds which is 13-15 minutes at that. The women have not definitively improved as an entire gender over the past 20 years, which the men have to a slightly more noticeable degree with their data plotted in a downward trending direction with less outliers scattered throughout. It is interesting how the women’s data isn’t as compact as the men’s and ultimately begs the question, why do the female gender’s marathon finishing times vary year to year so much more than the men’s, the actual finishing times themselves aside? Also, it’s interesting to note that the fastest average finishing time for the women was actually from the race 20 years ago, not even within the past 5, let alone 10 or even 15, years.
+
+![London](https://github.com/yiwenyin/assets/blob/main/ds17.png)
 
 
 ## Conclusion
@@ -125,55 +146,5 @@ tbd
 [Code appendix](https://github.com/yiwenyin/assets/blob/main/DS105%20code%20appendix.pdf) 
 
 ## Image repository
-
-![test screenshot](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%202.32.16%20PM.png)
-
-
-![boxplots](https://github.com/yiwenyin/assets/blob/main/ds6.png)
-![chicago](https://github.com/yiwenyin/assets/blob/main/ds16.png)
-![London](https://github.com/yiwenyin/assets/blob/main/ds17.png)
 ![NYC](https://github.com/yiwenyin/assets/blob/main/ds18.png)
-![Boston](https://github.com/yiwenyin/assets/blob/main/ds19.png)
-![berlin](https://github.com/yiwenyin/assets/blob/main/ds24.png)
 
-
-### END OF CONTENT -------------------
-## Reference for GitHub code formatting below
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/yiwenyin/Marathon-Project/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yiwenyin/Marathon-Project/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
