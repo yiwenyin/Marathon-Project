@@ -27,7 +27,15 @@ tbd
 
 ## Appendix
 
+<embed src="https://github.com/yiwenyin/assets/blob/main/DS105%20code%20appendix.pdf" width="500" height="375" type="application/pdf">
+
+## Image repository
+
 ![test screenshot](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%202.32.16%20PM.png)
+![combined marathon times graph](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%207.36.27%20PM.png)
+![Olympics finishing times](https://github.com/yiwenyin/assets/blob/main/ds1.png)
+![WMM finishing times](https://github.com/yiwenyin/assets/blob/main/ds2.png)
+
 
 ### END OF CONTENT -------------------
 ## Reference for GitHub code formatting below
