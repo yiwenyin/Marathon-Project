@@ -27,7 +27,7 @@ tbd
 
 ## Appendix
 
-![test screenshot](/assets/blob/main/Screen%20Shot%202022-01-13%20at%202.32.16%20PM.png)
+![test screenshot](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%202.32.16%20PM.png)
 
 ### END OF CONTENT -------------------
 ## Reference for GitHub code formatting below
