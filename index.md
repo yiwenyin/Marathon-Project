@@ -24,8 +24,8 @@ The aim of our project was an exploratory analysis to find factors that can infl
 ## Data
 The data we collected is marathon times spanning multiple decades and covering multiple locations. The data is split into two groups, city-based data and the Olympics data. The Olympics data was collected from olympicgamesmarathon.com/results.php which displays marathon times for every year with all the runners who ran it and their time.  The city-based data was collected from marathonguide.com and bmw-berlin-marathon.com. Marathon Guide provides access to hundreds of marathons across the world every year and for us, it provided four out of the five marathon majors data. The second website is the official site for the Berlin marathon which provided us with all the data for Berlin. Within the city-based data we have the Berlin, London, Boston, Chicago, and NYC marathons. The raw data for the Olympics included the position, the name of the runner, the nationality of the runner, and the finishing time. When collecting the data, we grouped it by year and only kept the top one hundred runners for each year. After cleaning the data, we kept only the position and time of the runner. While the Olympics data was clean and easy to prepare, our city-based data was inconsistent across years and variables. With the city-based data we collected the top one hundred runners and their times for the past twenty-one years. However, each city had certain variables that other cities did not. So, because of this variables are limited to one race each. So, we cannot say for certain that a specific variable is a clear indicator of influencing a marathon. Aside from that, the variables for each city are temperature (Boston), age (Chicago), ethnicity (Berlin), gender (London), and nationality (NYC). So, for the Olympics data we have twenty-six years worth of time series data. For the city data we have twenty years of time series data and a specific categorical variable for each race. This leaves us with about 2600 data points for the Olympics data and 2000 data points for each city. For our descriptive statistics shown below, we tracked the standard deviation, average, slowest, and fastest time for each city. This gave us a high-level overview of the marathons and allowed us to start comparing marathon performances. So, for example we see London has the lowest standard deviation which can indicate that runners have more consistent times at this event compared to others. We then performed more in-depth analysis which is expanded on in the Analysis section.
 
-[pivot table appendix](https://github.com/yiwenyin/assets/blob/main/ds5.png)
-
+[Pivot table descriptive statistics](https://github.com/yiwenyin/assets/blob/main/ds5.png)
+![pivot table appendix](https://github.com/yiwenyin/assets/blob/main/ds5.png)
 
 ## Methodology
 The first step of analyzing the data was to import the data. Our team used Python and Excel for collecting the data. 
@@ -38,41 +38,51 @@ Once all the data was in the correct place we were able to analyze the data in d
 ## Results
 Upon synthesis of all our data, we were able to draw the average fastest marathon finishing times in each year of the Olympics and then in each year of the World Marathon Majors, later extrapolating said findings per city for additional analysis. 
 
+[Olympics finishing times](https://github.com/yiwenyin/assets/blob/main/ds1.png)
 ![Olympics finishing times](https://github.com/yiwenyin/assets/blob/main/ds1.png)
+
+[WMM finishing times](https://github.com/yiwenyin/assets/blob/main/ds2.png)
 ![WMM finishing times](https://github.com/yiwenyin/assets/blob/main/ds2.png)
 
 To further understand these yearly average race times and identify/dismiss possible patterns, we can look at a linear model with the data from both the Olympics and World Major Marathons for comparison.
 
+[Combined marathon times graph](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%207.36.27%20PM.png)
 ![combined marathon times graph](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%207.36.27%20PM.png)
 
 It is important to note that the World Marathon Majors data plotted above only starts in 2001 and doesn’t date back to 1908 as does our Olympic data due to accessibility limitations. To optimize the digestibility of the above chart for enhanced comparison, we chose to keep the scales consistent across the two variables, thus explaining the size of the World Marathon Major. Amplified versions of the two data groups will be analyzed in further detail below. By means of this graph, however, we are able to definitively say that race finishing times have substantially decreased at a rather steady rate from 1908 until around 1976, after which the finishing times started to plateau. Due to the limitations of our data accessibility, our Majors data only starting in 2001, and the Olympics occurring only once every four years opposed to the majors that occur yearly we are unable to draw any concrete conclusions as the two groups of data relate to each other and pertain to changes over time. In the years that the two groups of data do overlap, however, we can conclude that the average race finishing times at the World Marathon Majors are consistently faster than those at the Olympics, as per the linear model.
 
 Looking closer at the Olympic data on an individual level, as per the trend and progression model below, we can see that the averaged finishing times appear to be following a similar trend to that of the fastest finishing times.
 
+[Olympic times plot](https://github.com/yiwenyin/assets/blob/main/ds15.png)
 ![olympic times plot](https://github.com/yiwenyin/assets/blob/main/ds15.png)
 
 It is important to note that for optimized digestibility of this line graph, we imputed missing years of data using averages of other years. 
 
 To better understand the trend said data follows, we can use outlier analysis for stationary time series analysis to identify large jumps and advancements in marathon times.
 
+[Outlier analysis](https://github.com/yiwenyin/assets/blob/main/ds14.png)
 ![outlier analysis](https://github.com/yiwenyin/assets/blob/main/ds14.png)
 
 This turning points graph further highlights the substantial jumps in our data around 1950 and 1960, with time improvement trends appearing flatline onwards from 1960. 
 
 To analyze this nonstationarity, we employed a time series model, using an AutoRegressive Integrated Moving Average (ARIMA) model, as plotted below.
 
+[Full ARIMA model, no forecast](https://github.com/yiwenyin/assets/blob/main/ds13.png)
 ![full arima model no forecast](https://github.com/yiwenyin/assets/blob/main/ds13.png)
 
 Our output (referenced below) prompted an ARIMA of (0,1,1) which further solidifies our conclusion that there is in fact a pattern over time amongst our Olympic Marathon data. 
 
+[ARIMA output](https://github.com/yiwenyin/assets/blob/main/ds23.png)
 ![arima output](https://github.com/yiwenyin/assets/blob/main/ds23.png)
 
 When conducting the same process for our World Marathon Major data, however, we were prompted with an output, shown below, that showed an ARIMA of (0,1,0), meaning that there was no conclusive pattern in this data over time. 
 
+[Inconclusive ARIMA output](https://github.com/yiwenyin/assets/blob/main/ds22.png)
 ![inconclusive arima output](https://github.com/yiwenyin/assets/blob/main/ds22.png)
 
 Below is said inconclusivity plotted for further clarity on the meaning of our output.
 
+[Unsuccessful ARIMA for cities](https://github.com/yiwenyin/assets/blob/main/ds11.png)
 ![unsuccessful arima city](https://github.com/yiwenyin/assets/blob/main/ds11.png)
 
 Because the blue line (our original data) mirrors the black line (the time series model) exactly, just in a delayed fashion, we can see that the model is unable to derive any time series patterns or trends.
@@ -81,10 +91,11 @@ Thus, it is only our Olympic marathon data and not our World Marathon Majors dat
 
 The forecast we conducted via said ARIMA model projects marathon finishing time progressions over the next 40 years, bounded by 80% and 95% confidence intervals, shown below. Our calculated ARIMA model uses a moving average component of time series analysis, and creates a smoothed out trend of our Olympic times data. While the time series model follows our raw data quite closely, it avoids extremes and therefore extracts the trend of Olympic marathon time progression, which shows a clear downward movement. This trend is extended into the future of race times, given by the forecasted progression.
 
-![full model arima forecast](https://github.com/yiwenyin/assets/blob/main/ds12.png)
+![Full model ARIMA forecast](https://github.com/yiwenyin/assets/blob/main/ds12.png)
 
 We subsequently compared our full ARIMA model against a training set model to measure the accuracy of both our model and our forecast, as per the graph below.
 
+[Time series training model](https://github.com/yiwenyin/assets/blob/main/ds10.png)
 ![time series train model](https://github.com/yiwenyin/assets/blob/main/ds10.png)
 
 Because the two models produce similar coefficient values, we can appropriately use the training model as a proxy for the full model’s accuracy. 
@@ -94,9 +105,11 @@ Additionally, both our true data and full model fall within the 80% confidence i
 For the full model point and intervals table of these forecasted values, along with the training model point and intervals table, see below for the full and training forecast values, respectively.
 
 _Full Model Forecast Values_
+[Full model forecast values](https://github.com/yiwenyin/assets/blob/main/ds21.png)
 ![full model values](https://github.com/yiwenyin/assets/blob/main/ds21.png)
 
 _Training Model Forecast Values_
+[Training model forecast values](https://github.com/yiwenyin/assets/blob/main/ds20.png)
 ![test forecastt values](https://github.com/yiwenyin/assets/blob/main/ds20.png)
 
 _Note: the training model is far more optimistic in predicting faster times. Why? The model is not able to extract trends from more recent years, which as we saw earlier, show a flatter trend. This allows us greater confidence in our full ARIMA model._
@@ -105,45 +118,56 @@ Unfortunately, we were unable to draw a conclusive output for the World Marathon
 
 Despite our inability to create a time series model to capture the World Marathon Majors trends, our city-level data still offers contextualization for our Olympic data and model, shown below. Due to the annual nature of the World Marathon Majors, our city-level data is able to provide us with reasonable variation of race times for elite runners. We can overlay our Olympic models and forecast with the World Marathon Majors to provide a better understanding of how our forecast may fit into other marathon race times data. We can see that the forecast closely represents where both our Olympic and World Marathon Majors races may be headed. We can additionally use this forecast to predict the first official marathon finishing time of under two hours.
 
+[Cities with Olympic forecast](https://github.com/yiwenyin/assets/blob/main/ds9.png)
 ![city with olympic forecast](https://github.com/yiwenyin/assets/blob/main/ds9.png)
 
 Looking closer at our World Marathon Majors data and the respective cities for which we were able to gather data, we can identify various city-level conclusions.
 
+[World map of times](https://github.com/yiwenyin/assets/blob/main/ds8.png)
 ![world map times](https://github.com/yiwenyin/assets/blob/main/ds8.png)
 
 Overlaying the linear progression models of each city, as seen below, we get an even better look at this. Interesting points of note include the Berlin Marathon having runners be consistently the fastest finishers relative to the other four cities, whereas we can also conclude that Boston Marathon runners vary the most in their finishing times. In any comparative model as so, especially when looking at as many data points as we did, it is important that we understand the possibility of outliers and the ultimate distribution of each Marathon city’s race time data. 
 
+[City plot](https://github.com/yiwenyin/assets/blob/main/ds7.png)
 ![city plot](https://github.com/yiwenyin/assets/blob/main/ds7.png)
 
 The boxplot chart below provides a friendlier visualization of how our city race times vary, as explained above. It is simpler to see here that Berlin runners are consistently running the fastest times, while Boston has the greatest range and variation of race times.
 
+[City boxplots](https://github.com/yiwenyin/assets/blob/main/ds6.png)
 ![boxplots](https://github.com/yiwenyin/assets/blob/main/ds6.png)
 
 As mentioned in earlier sections, on a city-specific level, we attempted to find explanatory covariates to further our understanding of why the data is how it is.
 
 From the 20 year span of data we synthesized for the Berlin World Marathon Majors, we found that the three ethnicities appearing most within the top 100 finishers each year were German, followed closely by Kenyan, and British. Each year the same countries continue to be on the top of the leaderboards, showing minimal signs of any performance changes as they relate to ethnicity. While this does not tell us much about the patterns identified in the above graphs, most primarily due to a limitation in data prohibiting us to conduct this ethnic analysis across all cities, it is interesting to note that the largest cohort of runners each year in Berlin were German, so not traveling far for the race. This was something we hypothesized before conducting our research and synthesizing the data. 
 
+[Berlin](https://github.com/yiwenyin/assets/blob/main/ds24.png)
 ![berlin](https://github.com/yiwenyin/assets/blob/main/ds24.png)
 
 We had hoped to see a clear relationship between weather and marathon finishing times, feeling most strongly about this hypothesis among the other covariates at the start of our research, however, upon analyzing the race-day temperature each year at the Boston Marathon, we found no correlation. The scatter plot below for which we regressed temperature on race times indicates this very clearly, with no relationship among the plotted data points evident. 
 
+[Boston](https://github.com/yiwenyin/assets/blob/main/ds19.png)
 ![Boston](https://github.com/yiwenyin/assets/blob/main/ds19.png)
 
 Age group ended up being a covariate that was very relationship-oriented, the data producing concrete conclusions as expected. As you can see below, runners aged 25-29 have been consistently the fastest for the past 20 years of the Chicago Marathon, followed by runners 20-24 and then 30-34. Given what we know about the human body and its physical abilities this is no surprise. There were very limited data points for both the youngest and oldest cohorts of runners, 16-19 and 50-54, with runners aged 45-49 and 50-54 the slowest cohort of runners, confirming that there is in fact a sweet spot for age when it comes to running marathons. 
 
+[Chicago](https://github.com/yiwenyin/assets/blob/main/ds16.png)
 ![chicago](https://github.com/yiwenyin/assets/blob/main/ds16.png)
 
 The male and female bodies are built differently and thus it is no surprise that we saw a significant relationship between finishing times and gender when evaluating male and female race times over 20 years of the London Marathon. The men have unquestionably ran faster than the women every year, and by about 900 seconds which is 13-15 minutes at that. The women have not definitively improved as an entire gender over the past 20 years, which the men have to a slightly more noticeable degree with their data plotted in a downward trending direction with less outliers scattered throughout. It is interesting how the women’s data isn’t as compact as the men’s and ultimately begs the question, why do the female gender’s marathon finishing times vary year to year so much more than the men’s, the actual finishing times themselves aside? Also, it’s interesting to note that the fastest average finishing time for the women was actually from the race 20 years ago, not even within the past 5, let alone 10 or even 15, years.
 
+[London](https://github.com/yiwenyin/assets/blob/main/ds17.png)
 ![London](https://github.com/yiwenyin/assets/blob/main/ds17.png)
 
 Although different than ethnicity in nature, exploring the synthesized data for runner nationality throughout the past 20 years of the New York City Marathon led to an interesting point of reference when thinking back to the previous Berlin Marathon analysis. Americans were by far the most present among the top 100 finishers over the 20 years, making up about 50%. While it makes a lot of sense that the most common nationality among these highest caliber runners were American for a US race, it is interesting to note how much less international the NYC Marathon was relative to the Berlin Marathon. 
 
+[NYC](https://github.com/yiwenyin/assets/blob/main/ds18.png)
 ![NYC](https://github.com/yiwenyin/assets/blob/main/ds18.png)
 
 
 ## Conclusion
-tbd
+After conducting an abundance of research across a wide array of marathons and synthesizing said data in digestible ways from which we had hoped to draw and dismiss conclusivity, we found that trends were significantly more present among our Olympic data than they were among our World Marathon Majors data. 
+
+It was our utmost hope that we could find increasingly consistent data for covariates across each city, as our data accessibility limitations in this regard put confines on our ability to draw city to city conclusions. Given that this was an exploratory project, we do not regret exploring the covariates we did and are glad we still got to do so even if on a more minute and less finite scale. If we were able to extend this project another semester, we would take the opportunity to restructure our research, ultimately replicating our covariate exploration for the World Marathon Majors with the Olympics. Having initially planned to make the covariate city-level exploratory analysis the driver of our project, we of course had to adapt with the unavoidable data limitations faced, choosing to add on the Olympic component and ultimately make it the more central focus on a comparative level with the World Marathon Majors. Knowing what we know now, it would be of great interest to further explore Olympic Marathons in the way in which we had initially hoped to explore with the World Marathon Major cities. Nonetheless, we learned a tremendous amount in our exploration of these marathons and look forward to applying the skills we’ve picked up throughout this course in our future endeavors. 
 
 ## Appendix
 
