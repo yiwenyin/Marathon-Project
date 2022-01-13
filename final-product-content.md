@@ -35,6 +35,21 @@ tbd
 ![combined marathon times graph](https://github.com/yiwenyin/assets/blob/main/Screen%20Shot%202022-01-13%20at%207.36.27%20PM.png)
 ![Olympics finishing times](https://github.com/yiwenyin/assets/blob/main/ds1.png)
 ![WMM finishing times](https://github.com/yiwenyin/assets/blob/main/ds2.png)
+![pivot table appendix](https://github.com/yiwenyin/assets/blob/main/ds5.png)
+![boxplots](https://github.com/yiwenyin/assets/blob/main/ds6.png)
+![city plot](https://github.com/yiwenyin/assets/blob/main/ds7.png)
+![world map times](https://github.com/yiwenyin/assets/blob/main/ds8.png)
+![city with olympic forecast](https://github.com/yiwenyin/assets/blob/main/ds9.png)
+![time series train model](https://github.com/yiwenyin/assets/blob/main/ds10.png)
+![unsuccessful arima city](https://github.com/yiwenyin/assets/blob/main/ds11.png)
+![full model arima forecast](https://github.com/yiwenyin/assets/blob/main/ds12.png)
+![full arima model no forecast](https://github.com/yiwenyin/assets/blob/main/ds13.png)
+![outlier analysis](https://github.com/yiwenyin/assets/blob/main/ds14.png)
+![olympic times plot](https://github.com/yiwenyin/assets/blob/main/ds15.png)
+![chicago](https://github.com/yiwenyin/assets/blob/main/ds16.png)
+![London](https://github.com/yiwenyin/assets/blob/main/ds17.png)
+![NYC](https://github.com/yiwenyin/assets/blob/main/ds18.png)
+![Boston](https://github.com/yiwenyin/assets/blob/main/ds19.png)
 
 
 ### END OF CONTENT -------------------
