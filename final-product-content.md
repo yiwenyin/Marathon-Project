@@ -137,6 +137,10 @@ The male and female bodies are built differently and thus it is no surprise that
 
 ![London](https://github.com/yiwenyin/assets/blob/main/ds17.png)
 
+Although different than ethnicity in nature, exploring the synthesized data for runner nationality throughout the past 20 years of the New York City Marathon led to an interesting point of reference when thinking back to the previous Berlin Marathon analysis. Americans were by far the most present among the top 100 finishers over the 20 years, making up about 50%. While it makes a lot of sense that the most common nationality among these highest caliber runners were American for a US race, it is interesting to note how much less international the NYC Marathon was relative to the Berlin Marathon. 
+
+![NYC](https://github.com/yiwenyin/assets/blob/main/ds18.png)
+
 
 ## Conclusion
 tbd
@@ -144,7 +148,4 @@ tbd
 ## Appendix
 
 [Code appendix](https://github.com/yiwenyin/assets/blob/main/DS105%20code%20appendix.pdf) 
-
-## Image repository
-![NYC](https://github.com/yiwenyin/assets/blob/main/ds18.png)
 
